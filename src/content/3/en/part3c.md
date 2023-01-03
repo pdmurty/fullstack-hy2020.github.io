@@ -783,7 +783,7 @@ const errorHandler = (error, request, response, next) => {
   next(error)
 }
 
-// this has to be the last loaded middleware.
+// this has to be the last loaded middleware.  It has to be placed after all the route calls.
 app.use(errorHandler)
 ```
 
@@ -818,7 +818,7 @@ const errorHandler = (error, request, response, next) => {
   // ...
 }
 
-// handler of requests with result to errors
+// handler of requests with result to errors, it has to be plced after the route calls that use next.
 app.use(errorHandler)
 ```
 
